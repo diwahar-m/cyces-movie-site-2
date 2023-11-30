@@ -17,12 +17,12 @@ export default function Success({jsonData}){
     
     let bookedSeats = '';
     (function updatingBookedSeats(){
-        let selectedScreen = jsonData.theatres.find( theatre => theatre.name == theatreName)
-                            .screens.find( screen => screen.name == screenName)
+        let selectedScreen = jsonData.theatres.find( theatre => theatre.name === theatreName)
+                            .screens.find( screen => screen.name === screenName)
         for (let eachRow in selectedScreen.seats){
             let row = selectedScreen.seats[eachRow]; // getting eachRow
             for (let eachSeat of row){
-                if(eachSeat.selected == true) bookedSeats = bookedSeats+' '+eachSeat.name ;
+                if(eachSeat.selected === true) bookedSeats = bookedSeats+' '+eachSeat.name ;
             }
         }
     })()

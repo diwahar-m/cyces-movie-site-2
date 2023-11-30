@@ -1,9 +1,9 @@
-import {useState, useEffect} from 'react';
+import { useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 
 export default function IndividualSeat({eachColumn, eachRow, updateError, jsonData, updateJsonData}){
    
-    const {movieName, theatreName, screenName} = useParams();
+    const { theatreName, screenName} = useParams();
 
     useEffect(()=>{
         console.log(jsonData);
@@ -47,7 +47,7 @@ export default function IndividualSeat({eachColumn, eachRow, updateError, jsonDa
 
     const buttonHandler = (e) =>{
         if(!eachColumn.booked){
-            if(eachColumn.selected == true){
+            if(eachColumn.selected === true){
                   updateJsonData({ ...jsonData, theatres: updatingSeatValue(e.target.id, false )});
                   updateError('');
                     

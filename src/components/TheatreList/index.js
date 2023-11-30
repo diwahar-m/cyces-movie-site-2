@@ -14,12 +14,12 @@ export default function TheatreList({jsonData, updateJsonData}){
 
     
     function filteringMovies(){     
-        const movie =  jsonData.movies.filter( movie => movie.name == movieName);
+        const movie =  jsonData.movies.filter( movie => movie.name === movieName);
         updateMovie(movie[0]);       
     }
 
     const filteringTheatres=()=>{
-        const movie =  jsonData.movies.find( movie => movie.name == movieName);
+        const movie =  jsonData.movies.find( movie => movie.name === movieName);
         const filterTheatres = jsonData.theatres.filter(theatre =>
             theatre.moviesId.includes(movie.id)
          )

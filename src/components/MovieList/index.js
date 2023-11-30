@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"; 
-import {useState, useEffect} from 'react';
+import { useEffect} from 'react';
 import MovieCard from "../../cards/MovieCard";
 
  // const movie =[

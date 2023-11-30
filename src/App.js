@@ -11,7 +11,7 @@ import Success from './components/Success';
 function App() { 
 
   let initialValue;
-  if(localStorage.getItem('jsonData') == null){
+  if(localStorage.getItem('jsonData') === null){
     initialValue = []
   }else {
     initialValue = JSON.parse(localStorage.getItem('jsonData'));

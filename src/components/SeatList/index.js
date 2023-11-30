@@ -36,11 +36,11 @@ export default function SeatList({jsonData, updateJsonData}){
         screenSeatRows.map( row => {
             let eachRow = screenSeats[row]
             eachRow.map( eachSeat => {
-                if(eachSeat.selected == true) count++
+                if(eachSeat.selected === true) count++
             })
         })
 
-        if (value == 'price') return count * 180
+        if (value === 'price') return count * 180
         return count
     }
 
