@@ -25,10 +25,14 @@ export default function SeatList({jsonData, updateJsonData}){
         screenSeatRows = Object.keys(screenSeats);
     }
       
+    // useEffect(()=>{   
+    //     getSelectedScreenSeats();
+    //     console.log('screenSeats', screenSeats)
+    // },[jsonData])
     useEffect(()=>{   
         getSelectedScreenSeats();
         console.log('screenSeats', screenSeats)
-    },[jsonData])
+    })
 
     function checkSelectedSeats(value){
         let  count = 0; 
