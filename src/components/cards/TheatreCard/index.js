@@ -23,8 +23,8 @@ export default function TheatreCard({theatre, selectedMovie}){
                     
                 >
                     <div className=" flex ">
-                            <img src={theatre.image} alt="thetare" className="w-[10rem] h-[10rem] rounded-full" />
-                           <div className='self-center pl-[1rem] flex'>
+                            <img src={theatre.image} alt="thetare" className="w-[5rem] h-[5rem] md:w-[10rem] md:h-[10rem] rounded-full" />
+                           <div className='self-center pl-[1rem] flex md:flex-row flex-col'>
                                 <div>
                                     <h6 className='text-sm md:text-lg font-bold mt-[1rem]' >Theatre: {theatre.name}</h6>                         
                                     <p className='text-sm md:text-lg font-base mb-[1rem]'>Location: {theatre.location}</p> 
@@ -33,7 +33,7 @@ export default function TheatreCard({theatre, selectedMovie}){
                                 {
                                     screenList &&
                                     (
-                                        <div className="md:ml-[2rem] self-center flex md:flex-row ">
+                                        <div className="md:ml-[2rem] self-center flex  md:flex-row ">
                                             {
                                                 screenList.map(screen =>(
                                                     <ScreenCard key={screen.id} screen={screen} theatre={theatre} />
