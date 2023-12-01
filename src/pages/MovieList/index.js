@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"; 
 import { useEffect} from 'react';
-import MovieCard from "../../cards/MovieCard";
+import MovieCard from "../../components/cards/MovieCard";
 
  // const movie =[
     //     {

@@ -12,7 +12,7 @@ export default function MovieCard({movie}){
                         <h6 className='text-sm md:text-sm font-bold mt-[1rem]'>{movie.name}</h6>                         
                         <p className='text-sm md:text-md font-base mb-[1rem]'>{movie.language}</p> 
                     </div>
-                    <h6 className='text-sm md:text-md font-semibold mb-[2rem]'>Rs. 180/ per seat</h6> 
+                    {/* <h6 className='text-sm md:text-md font-semibold mb-[2rem]'>Rs. 180/ per seat</h6>  */}
                         
                 </div>
             </div> 

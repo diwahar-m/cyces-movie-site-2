@@ -1,6 +1,6 @@
 import { useParams,useNavigate } from "react-router-dom";
 import {useEffect, useState} from 'react';
-import ScreenRowSeats from "../../cards/ScreenRowSeats";
+import ScreenRowSeats from "../../components/cards/ScreenRowSeats";
 
 export default function SeatList({jsonData, updateJsonData}){ 
 
@@ -9,14 +9,14 @@ export default function SeatList({jsonData, updateJsonData}){
 
     const [error, updateError] = useState(''); 
 
-    
+    // filtering screen seats from the state.
     let selectedMovie = jsonData.movies.find(movie => movie.name === movieName);
     let selectedTheatre = jsonData.theatres.filter(theatre => theatre.name === theatreName);
     let selectedScreen = selectedTheatre[0].screens.filter( screen => screen.name === screenName);
     let screenSeats = selectedScreen[0].seats ;
     let screenSeatRows = Object.keys(screenSeats);
 
-    
+
     function getSelectedScreenSeats(){
         selectedMovie = jsonData.movies.find(movie => movie.name === movieName);
         selectedTheatre = jsonData.theatres.filter(theatre => theatre.name === theatreName);
@@ -32,15 +32,21 @@ export default function SeatList({jsonData, updateJsonData}){
 
     function checkSelectedSeats(value){
         let  count = 0; 
+        let price = 0;
         
         screenSeatRows.map( row => {
             let eachRow = screenSeats[row]
             eachRow.map( eachSeat => {
-                if(eachSeat.selected === true) count++
+                if(eachSeat.selected === true){
+                    count++
+                    price = price + selectedTheatre[0].priceList[row]
+                }
             })
         })
 
-        if (value === 'price') return count * 180
+        if (value === 'price'){
+            return price;
+        } 
         return count
     }
 

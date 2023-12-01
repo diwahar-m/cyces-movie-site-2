@@ -7,7 +7,19 @@ export default function Success({jsonData}){
     const {movieName,theatreName, screenName} = useParams();
     let userDetails = JSON.parse(localStorage.getItem('userDetails'));
 
+    let successText = 'Successfully Booked !';
+    let i=0;
+    function successTextWriter() {
+        
+        if (i < successText.length) {
+          document.getElementById("success").innerHTML += successText.charAt(i);
+          i++;
+          setTimeout(successTextWriter, 50);
+        }
+      }
+
     useEffect(()=>{
+        successTextWriter();
         setTimeout(()=>{
             navigate(`/home`)
         },9000)
@@ -22,10 +34,12 @@ export default function Success({jsonData}){
         for (let eachRow in selectedScreen.seats){
             let row = selectedScreen.seats[eachRow]; // getting eachRow
             for (let eachSeat of row){
-                if(eachSeat.selected === true) bookedSeats = bookedSeats+' '+eachSeat.name ;
+                if(eachSeat.selected === true) bookedSeats = bookedSeats+', '+eachSeat.name ;
             }
         }
     })()
+
+    
 
     return(
         <div className=' h-screen flex-col justify-between items-center px-[2rem] py-[4rem] '>
@@ -33,7 +47,7 @@ export default function Success({jsonData}){
                 <div className="p-5 border-[#868a91] rounded-lg shadow-2xl shadow-[#0df205]">
                     <h1 className="mb-[1rem]">{`Hi, ${userDetails.name} !`}</h1>
                     <div className="">
-                        <h1 className="text-5xl mb-[2rem] text-[#0df205]">Successfully Booked !</h1>
+                        <h1 id='success' className="text-5xl mb-[2rem] text-[#0df205]"></h1>
                         <h5 className="mb-[1rem]">{`Your tickets for 
                         ${movieName} is successfully booked 
                         seats`}</h5>

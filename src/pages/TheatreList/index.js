@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom"; 
 import {useState, useEffect} from 'react';
-import TheatreCard from "../../cards/TheatreCard";
+import TheatreCard from "../../components/cards/TheatreCard";
 
 
 export default function TheatreList({jsonData, updateJsonData}){ 
@@ -62,8 +62,8 @@ export default function TheatreList({jsonData, updateJsonData}){
                                 </div>
                                 <h6 className='text-sm md:text-xl font-semibold mb-[2rem]'>Cast: {selectedMovie.cast}</h6> 
                                 <h6 className='text-sm md:text-lg font-semibold mb-[2rem]'>Ratings: {selectedMovie.ratings}/10</h6> 
-                                <h6 className='text-sm md:text-md font-semibold mb-[2rem]'>Rs. 180/ per seat</h6> 
-                                    
+                                {/* <h6 className='text-sm md:text-md font-semibold mb-[2rem]'>Rs. 180/ per seat</h6> 
+                                     */}
                             </div>
                     </div> 
                     
