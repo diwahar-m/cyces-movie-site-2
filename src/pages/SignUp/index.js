@@ -1,9 +1,10 @@
 import { useNavigate} from "react-router-dom"; 
-import { useState } from "react";
+import { useState} from "react";
 
-export default function SignUp({ jsonData, updateJsonData}){  
+export default function SignUp(){  
 
     const navigate = useNavigate(); 
+
 
     const [userDetails, updateDetails]= useState({})
     const [error, updateError] = useState('');

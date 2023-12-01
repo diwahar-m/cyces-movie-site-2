@@ -1,7 +1,10 @@
-import { useEffect, useState} from 'react';
+import { useEffect, useState, useContext} from 'react';
 import {useParams} from 'react-router-dom';
+import { DataContext } from '../../../App';
 
-export default function IndividualSeat({eachColumn, eachRow, updateError, jsonData, updateJsonData}){
+export default function IndividualSeat({eachColumn, eachRow, updateError}){
+
+    const {jsonData,updateJsonData} = useContext(DataContext);
    
     const { theatreName, screenName} = useParams();
     const [seatPopUp, updatePopUp] = useState(false);

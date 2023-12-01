@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom"; 
 import { useEffect} from 'react';
 import MovieCard from "../../components/cards/MovieCard";
+import useMovieFetch from "../../hooks/useMovieFetch";
 
  // const movie =[
     //     {
@@ -19,21 +20,11 @@ import MovieCard from "../../components/cards/MovieCard";
     //     }
     // ]
 
-export default function MovieList({jsonData, updateJsonData}){ 
+export default function MovieList(){ 
 
     const navigate = useNavigate(); 
 
-    const fetchData = async()=>{
-        try{
-            let response = await fetch("data.json"); 
-            let fetchedData =await response.json();
-            console.log(fetchedData)
-            updateJsonData(fetchedData)
-
-        }catch(e){
-            console.log('Error while fetching data: ', e)
-        }      
-    }
+    const {fetchData,jsonData} = useMovieFetch()
 
     useEffect(()=>{
         fetchData();

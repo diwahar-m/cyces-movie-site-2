@@ -1,7 +1,10 @@
 import { useParams,useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
+import { DataContext } from "../../App";
 
-export default function Success({jsonData}){
+export default function Success(){
+
+    const {jsonData} = useContext(DataContext);
 
     const navigate = useNavigate(); 
     const {movieName,theatreName, screenName} = useParams();
@@ -49,8 +52,7 @@ export default function Success({jsonData}){
                     <div className="">
                         <h1 id='success' className="text-5xl mb-[2rem] text-[#0df205]">.</h1>
                         <h5 className="mb-[1rem]">{`Your tickets for 
-                        ${movieName} is successfully booked 
-                        seats`}</h5>
+                        ${movieName} is successfully booked `}</h5>
                         <h5 className="mb-[1rem]">{`Seat numbers are ${bookedSeats}  `}</h5>
                         
                         <p className="mb-[1rem]">Thank you for Bookings .</p>

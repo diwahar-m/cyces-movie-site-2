@@ -1,8 +1,11 @@
 import { useParams,useNavigate } from "react-router-dom";
-import {useEffect, useState} from 'react';
+import {useEffect, useState, useContext} from 'react';
 import ScreenRowSeats from "../../components/cards/ScreenRowSeats";
+import { DataContext } from "../../App";
 
-export default function SeatList({jsonData, updateJsonData}){ 
+export default function SeatList(){ 
+
+    const {jsonData,updateJsonData} = useContext(DataContext);
 
      const navigate = useNavigate() ;
      const {screenName, theatreName, movieName} = useParams();

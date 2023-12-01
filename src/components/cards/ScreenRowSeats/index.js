@@ -17,8 +17,6 @@ export default function ScreenRowSeats({key,eachRow, screenSeats, updateError, j
                                     eachColumn={eachColumn} 
                                     eachRow={eachRow}
                                     updateError={updateError}
-                                    jsonData={jsonData} 
-                                    updateJsonData={updateJsonData}
                                 />
                             ))
                         }

@@ -1,9 +1,11 @@
 import { useNavigate, useParams } from "react-router-dom"; 
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useContext} from 'react';
 import TheatreCard from "../../components/cards/TheatreCard";
+import { DataContext } from "../../App";
 
+export default function TheatreList(){ 
 
-export default function TheatreList({jsonData, updateJsonData}){ 
+    const {jsonData} = useContext(DataContext);
 
     const navigate = useNavigate(); 
     const {movieName} = useParams();   
