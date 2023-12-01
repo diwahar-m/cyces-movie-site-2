@@ -18,7 +18,7 @@ export default function SeatList({jsonData, updateJsonData}){
 
 
     function getSelectedScreenSeats(){
-        selectedMovie = jsonData.movies.find(movie => movie.name === movieName);
+        // selectedMovie = jsonData.movies.find(movie => movie.name === movieName); // netlify error
         selectedTheatre = jsonData.theatres.filter(theatre => theatre.name === theatreName);
         selectedScreen = selectedTheatre[0].screens.filter( screen => screen.name === screenName);
         screenSeats = selectedScreen[0].seats ;
