@@ -10,7 +10,7 @@ export default function SeatList({jsonData, updateJsonData}){
     const [error, updateError] = useState(''); 
 
     // filtering screen seats from the state.
-    let selectedMovie = jsonData.movies.find(movie => movie.name === movieName);
+    // let selectedMovie = jsonData.movies.find(movie => movie.name === movieName); // netlify error
     let selectedTheatre = jsonData.theatres.filter(theatre => theatre.name === theatreName);
     let selectedScreen = selectedTheatre[0].screens.filter( screen => screen.name === screenName);
     let screenSeats = selectedScreen[0].seats ;

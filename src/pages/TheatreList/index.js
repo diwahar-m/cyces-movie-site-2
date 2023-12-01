@@ -10,7 +10,6 @@ export default function TheatreList({jsonData, updateJsonData}){
 
     const [selectedMovie, updateMovie] = useState({});
     const [theatreList, updateTheatre] = useState([]);
-    const [error, updateError] = useState('');
 
     
     function filteringMovies(){     

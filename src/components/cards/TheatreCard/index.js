@@ -13,7 +13,7 @@ export default function TheatreCard({theatre, selectedMovie}){
 
     useEffect(()=>{
         filteringScreens();
-    },[])
+    })
  
     return(       
             theatre  && (

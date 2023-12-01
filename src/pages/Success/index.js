@@ -24,7 +24,7 @@ export default function Success({jsonData}){
             navigate(`/home`)
         },9000)
         
-    },[])
+    })
 
     
     let bookedSeats = '';
