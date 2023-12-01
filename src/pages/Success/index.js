@@ -47,7 +47,7 @@ export default function Success({jsonData}){
                 <div className="p-5 border-[#868a91] rounded-lg shadow-2xl shadow-[#0df205]">
                     <h1 className="mb-[1rem]">{`Hi, ${userDetails.name} !`}</h1>
                     <div className="">
-                        <h1 id='success' className="text-5xl mb-[2rem] text-[#0df205]"></h1>
+                        <h1 id='success' className="text-5xl mb-[2rem] text-[#0df205]">.</h1>
                         <h5 className="mb-[1rem]">{`Your tickets for 
                         ${movieName} is successfully booked 
                         seats`}</h5>

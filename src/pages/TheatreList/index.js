@@ -29,7 +29,7 @@ export default function TheatreList({jsonData, updateJsonData}){
     useEffect(()=>{
         filteringMovies();
         filteringTheatres();
-    },[])
+    })
 
     return(
         <div className=' h-screen flex-col justify-between items-center px-[2rem] py-[4rem] '>

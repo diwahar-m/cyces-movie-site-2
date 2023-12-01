@@ -33,10 +33,9 @@ export default function SeatList({jsonData, updateJsonData}){
     function checkSelectedSeats(value){
         let  count = 0; 
         let price = 0;
-        
-        screenSeatRows.map( row => {
-            let eachRow = screenSeats[row]
-            eachRow.map( eachSeat => {
+
+        screenSeatRows.forEach( row => {
+            screenSeats[row].forEach( eachSeat => {
                 if(eachSeat.selected === true){
                     count++
                     price = price + selectedTheatre[0].priceList[row]
